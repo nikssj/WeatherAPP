@@ -10,7 +10,7 @@ class WeatherImage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/background/night.png'),
+            image: AssetImage('assets/background/atardecer.png'),
             fit: BoxFit.cover),
       ),
       child: child,

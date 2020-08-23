@@ -18,7 +18,7 @@ class WeatherStatsService {
   getFinalDateTime(timeStamp, timeZoneSeconds) {
     var timestamptWithGMT = timeStamp + timeZoneSeconds;
 
-    var finalDate = convertTimestampToDate(timestamptWithGMT);
+    var finalDate = convertTimestampToDate(timeStamp);
 
     var formattedDate = dateTimeProvider.formatearDateTime(
         finalDate.toIso8601String(), 'Hm', null);
