@@ -12,4 +12,19 @@ class DateTimeProvider {
 
     return fechaFormateada;
   }
+
+  convertTimestampToDate(timestamp) {
+    var date = new DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
+
+    return date;
+  }
+
+  getFinalDateTime(timeStamp, timeZoneSeconds) {
+    var finalDate = convertTimestampToDate(timeStamp);
+
+    var formattedDate =
+        formatearDateTime(finalDate.toIso8601String(), 'Hm', null);
+
+    return formattedDate;
+  }
 }

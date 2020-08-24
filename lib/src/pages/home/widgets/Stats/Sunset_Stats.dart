@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 // Project imports:
 import 'package:weather_app/src/pages/home/services/WeatherStats_service.dart';
+import 'package:weather_app/src/utils/datetime_provider.dart';
 import 'package:weather_app/src/widgets/SizedText.dart';
 import '../../home_viewmodel.dart';
 import 'Css/StatsCss.dart';
@@ -38,7 +39,7 @@ class SunsetStats extends StatelessWidget {
             height: _tamanoTexto,
             child: Text(
               'Sunrise: ' +
-                  (weatherStatsService.getFinalDateTime(
+                  (dateTimeProvider.getFinalDateTime(
                       _homeVm.weatherData.sys.sunrise,
                       _homeVm.weatherData.timezone)),
               style: StatsCss(color: Colors.white).textProperties,
@@ -61,7 +62,7 @@ class SunsetStats extends StatelessWidget {
               height: _tamanoTexto,
               child: Text(
                 'Sunset: ' +
-                    (weatherStatsService.getFinalDateTime(
+                    (dateTimeProvider.getFinalDateTime(
                         _homeVm.weatherData.sys.sunset,
                         _homeVm.weatherData.timezone)),
                 style: StatsCss(color: Colors.white).textProperties,
