@@ -11,7 +11,6 @@ class WeatherProvider {
   Future<WeatherResponse> obtenerClima(BuildContext context, location) async {
     var q = location;
 
-    print(q);
     final response = await _helper.get(
         APIURL + 'weather?q=$q&appid=$WEATHER_API&units=metric', context);
 

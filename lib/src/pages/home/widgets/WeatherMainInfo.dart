@@ -14,7 +14,7 @@ class WeatherMainInfo extends StatelessWidget {
     return Column(
       children: [
         Text(
-          _homeVm.weatherData.name,
+          _homeVm.weatherData.name + ', ' + _homeVm.weatherData.sys.country,
           style: GoogleFonts.montserrat(color: Colors.white, fontSize: 30),
           textAlign: TextAlign.center,
         ),

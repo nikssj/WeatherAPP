@@ -7,19 +7,17 @@ import 'package:weather_app/src/pages/home/home_viewmodel.dart';
 class CustomSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _homeVm = Provider.of<HomeViewModel>(context, listen: true);
+    final _homeVm = Provider.of<HomeViewModel>(context, listen: false);
 
     final _size = MediaQuery.of(context).size;
-    final TextEditingController editingController = TextEditingController();
 
-    return Container(
+    return SizedBox(
       child: TextField(
-        // controller: editingController,
         textAlign: TextAlign.center,
         textInputAction: TextInputAction.go,
         style: TextStyle(color: Colors.white),
-        onChanged: (value) => _homeVm.setLocation = value,
-        onSubmitted: (value) => _homeVm.fetchWeather(context),
+        onChanged: (value) => setValue(_homeVm, value),
+        onSubmitted: (value) => {value = '', submit(context)},
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
             prefixIcon: GestureDetector(
@@ -43,10 +41,14 @@ class CustomSearchBar extends StatelessWidget {
               borderSide: BorderSide(color: Colors.indigoAccent, width: 3),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
-            hintText: 'Ingrese una locación',
+            hintText: 'Search location',
             hintStyle: TextStyle(color: Colors.white)),
       ),
     );
+  }
+
+  setValue(homeVm, [value]) {
+    homeVm.setLocation = value;
   }
 
   submit(context) async {

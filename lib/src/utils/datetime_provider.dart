@@ -10,8 +10,6 @@ class DateTimeProvider {
     var fechaFormateada =
         new DateFormat('$tipoFormato').addPattern(pattern).format(parsedDate);
 
-    print(fechaFormateada);
-
     return fechaFormateada;
   }
 }

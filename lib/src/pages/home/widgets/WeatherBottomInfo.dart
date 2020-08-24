@@ -59,23 +59,35 @@ class WeatherInfo extends StatelessWidget {
 
     final _homeVm = Provider.of<HomeViewModel>(context, listen: true);
 
+    final _selectedColor = Colors.white70;
+
+    final _notSelectedColor = Colors.grey[700];
+
+    // _homeVm.setSelectedStat = 'TempStat';
+
     return Row(
       children: [
         IconButton(
             icon: FaIcon(
               FontAwesomeIcons.temperatureHigh,
-              color: Colors.white70,
+              color: _homeVm.selectedStat == 'TempStat'
+                  ? _selectedColor
+                  : _notSelectedColor,
             ),
             onPressed: () {
+              _homeVm.setSelectedStat = 'TempStat';
               _homeVm.setWidgetInfo = TemperatureStats();
             }),
         SizedBox(width: _size.width * 0.015),
         IconButton(
             icon: FaIcon(
               FontAwesomeIcons.sun,
-              color: Colors.white70,
+              color: _homeVm.selectedStat == 'SunsetStats'
+                  ? _selectedColor
+                  : _notSelectedColor,
             ),
             onPressed: () {
+              _homeVm.setSelectedStat = 'SunsetStats';
               _homeVm.setWidgetInfo = SunsetStats();
             }),
         SizedBox(
@@ -83,11 +95,14 @@ class WeatherInfo extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {
+            _homeVm.setSelectedStat = 'CloudStats';
             _homeVm.setWidgetInfo = ExtraStats();
           },
           icon: FaIcon(
             FontAwesomeIcons.cloudSunRain,
-            color: Colors.white70,
+            color: _homeVm.selectedStat == 'CloudStats'
+                ? _selectedColor
+                : _notSelectedColor,
           ),
         ),
       ],

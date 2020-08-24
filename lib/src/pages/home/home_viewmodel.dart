@@ -2,15 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/helpers/BaseModel.dart';
 import 'package:weather_app/models/WeatherResponse_model.dart';
 import 'package:weather_app/src/providers/weather_provider.dart';
+import 'package:weather_app/src/widgets/Snackbars/Snackbars_functions.dart';
 
 class HomeViewModel extends BaseModel {
-  //Reporte diario
   WeatherResponse _weatherData;
 
   WeatherResponse get weatherData => _weatherData;
 
   set setWeatherData(WeatherResponse data) {
     _weatherData = data;
+  }
+
+  String _location;
+
+  String get location => _location;
+
+  set setLocation(String value) {
+    _location = value;
   }
 
   Widget _widgetInfo;
@@ -22,14 +30,12 @@ class HomeViewModel extends BaseModel {
     notifyListeners();
   }
 
-  String _location;
+  var _selectedStat = 'TempStat';
 
-  String get location => _location;
+  get selectedStat => _selectedStat;
 
-  set setLocation(String value) {
-    _location = value;
-
-    notifyListeners();
+  set setSelectedStat(value) {
+    _selectedStat = value;
   }
 
   Future fetchWeather(BuildContext context) async {
@@ -37,7 +43,6 @@ class HomeViewModel extends BaseModel {
 
     final response = await weatherProvider.obtenerClima(context, location);
 
-    print(response);
     if (response != null) {
       setWeatherData = response;
     }

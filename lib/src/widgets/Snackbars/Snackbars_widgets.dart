@@ -9,13 +9,14 @@ import 'package:weather_app/helpers/GlobalKey.dart';
 
 // Project imports:
 
+import '../SizedText.dart';
 import 'Snackbars_config.dart';
 
 final snackBars = new Snackbars();
 
 bool _isSnackbarActive = false;
 
-final _estiloTexto = GoogleFonts.sourceSansPro(fontSize: 14.5);
+final _estiloTexto = GoogleFonts.sourceSansPro(fontSize: 15);
 
 class Snackbars {
   get estaActivado => _isSnackbarActive;
@@ -44,7 +45,7 @@ class Snackbars {
         Builder(builder: (context) {
           myGlobals.setSnackBarContext = context;
           return Text(
-            'Cargando, por favor espere...',
+            'Searching location..',
             style: _estiloTexto,
           );
         }),

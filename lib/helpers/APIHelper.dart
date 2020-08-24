@@ -20,6 +20,7 @@ class ApiBaseHelper {
     var responseJson;
 
     try {
+      toastWidgetsService.loadingToast('Searching location..', context);
       final response = await http
           .get(url, headers: headers)
           .timeout(Duration(seconds: TIMEOUT_RESPONSE));
@@ -39,6 +40,8 @@ class ApiBaseHelper {
       case 200:
         var responseJson = json.decode(response.body.toString());
 
+        toastWidgetsService.mostrarToastSuccess(context, 'Location found!');
+
         return responseJson;
 
         break;
@@ -57,7 +60,8 @@ class ApiBaseHelper {
 
       case 404:
         toastWidgetsService.mostrarToastError(
-            context, 'Location not found', false);
+            context, 'Location not found. Please try again!', false);
+
         break;
 
       case 500:
