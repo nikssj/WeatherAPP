@@ -126,12 +126,12 @@ class Weather {
 }
 
 class Main {
-  int temp;
-  double feelsLike;
-  int tempMin;
-  int tempMax;
-  int pressure;
-  int humidity;
+  var temp;
+  var feelsLike;
+  var tempMin;
+  var tempMax;
+  var pressure;
+  var humidity;
 
   Main(
       {this.temp,

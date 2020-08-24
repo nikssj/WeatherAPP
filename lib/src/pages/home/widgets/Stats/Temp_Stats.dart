@@ -24,6 +24,48 @@ class TemperatureStats extends StatelessWidget {
           children: [
             Row(children: [
               FaIcon(
+                FontAwesomeIcons.thermometerEmpty,
+                color: Colors.grey[400],
+                size: _tamanoIcon,
+              ),
+              SizedBox(
+                width: _size.width * 0.012,
+              ),
+              SizedText(
+                height: _tamanoTexto,
+                child: Text(
+                  'Min: ' + _homeVm.weatherData.main.tempMin.toString() + '°',
+                  style: GoogleFonts.montserrat(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ]),
+            SizedBox(height: _size.height * 0.02),
+            Row(children: [
+              FaIcon(
+                FontAwesomeIcons.thermometerFull,
+                color: Colors.grey[400],
+                size: _tamanoIcon,
+              ),
+              SizedBox(
+                width: _size.width * 0.012,
+              ),
+              SizedText(
+                height: _tamanoTexto,
+                child: Text(
+                  'Max: ' + _homeVm.weatherData.main.tempMax.toString() + '°',
+                  style: GoogleFonts.montserrat(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ]),
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(children: [
+              FaIcon(
                 FontAwesomeIcons.water,
                 color: Colors.grey[400],
                 size: _tamanoIcon,
@@ -63,48 +105,6 @@ class TemperatureStats extends StatelessWidget {
                 ),
               ],
             ),
-          ],
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(children: [
-              FaIcon(
-                FontAwesomeIcons.thermometerEmpty,
-                color: Colors.grey[400],
-                size: _tamanoIcon,
-              ),
-              SizedBox(
-                width: _size.width * 0.012,
-              ),
-              SizedText(
-                height: _tamanoTexto,
-                child: Text(
-                  'Min: ' + _homeVm.weatherData.main.tempMin.toString() + '°',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ]),
-            SizedBox(height: _size.height * 0.02),
-            Row(children: [
-              FaIcon(
-                FontAwesomeIcons.thermometerFull,
-                color: Colors.grey[400],
-                size: _tamanoIcon,
-              ),
-              SizedBox(
-                width: _size.width * 0.012,
-              ),
-              SizedText(
-                height: _tamanoTexto,
-                child: Text(
-                  'Max: ' + _homeVm.weatherData.main.tempMax.toString() + '°',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ]),
           ],
         ),
       ],

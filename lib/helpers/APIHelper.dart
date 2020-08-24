@@ -55,6 +55,11 @@ class ApiBaseHelper {
 
         break;
 
+      case 404:
+        toastWidgetsService.mostrarToastError(
+            context, 'Location not found', false);
+        break;
+
       case 500:
         return toastWidgetsService.mostrarToastError(
             context,

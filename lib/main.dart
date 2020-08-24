@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:weather_app/src/pages/home/home_page.dart';
@@ -21,9 +22,11 @@ class MyApp extends StatelessWidget {
           create: (_) => HomeViewModel(),
         ),
       ],
-      child: MaterialApp(
-        home: HomePage(),
-        debugShowCheckedModeBanner: false,
+      child: OverlaySupport(
+        child: MaterialApp(
+          home: HomePage(),
+          debugShowCheckedModeBanner: false,
+        ),
       ),
     );
   }

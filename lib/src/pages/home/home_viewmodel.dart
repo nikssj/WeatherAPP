@@ -22,13 +22,36 @@ class HomeViewModel extends BaseModel {
     notifyListeners();
   }
 
+  String _location;
+
+  String get location => _location;
+
+  set setLocation(String value) {
+    _location = value;
+
+    notifyListeners();
+  }
+
+  Future fetchWeather(BuildContext context) async {
+    setState(ViewState.Busy);
+
+    final response = await weatherProvider.obtenerClima(context, location);
+
+    print(response);
+    if (response != null) {
+      setWeatherData = response;
+    }
+
+    setState(ViewState.Idle);
+  }
+
   //Cargar pagina
   Future cargarPagina(BuildContext context) async {
     setState(ViewState.Busy);
 
     setPaginaCargada(false);
 
-    final response = await weatherProvider.obtenerClima(context, 'Yerba Buena');
+    final response = await weatherProvider.obtenerClima(context, 'Miami');
 
     setWeatherData = response;
 
