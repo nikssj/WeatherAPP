@@ -9,9 +9,9 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:http/http.dart' as http;
-import 'package:weather_app/src/widgets/Snackbars/Snackbars_functions.dart';
 
 // Project imports:
+import 'package:weather_app/src/widgets/Snackbars/Snackbars_functions.dart';
 import 'Constants.dart';
 import 'Exception.dart';
 

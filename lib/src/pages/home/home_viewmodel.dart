@@ -1,8 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:weather_app/helpers/BaseModel.dart';
 import 'package:weather_app/models/WeatherResponse_model.dart';
 import 'package:weather_app/src/providers/weather_provider.dart';
-import 'package:weather_app/src/widgets/Snackbars/Snackbars_functions.dart';
 
 class HomeViewModel extends BaseModel {
   WeatherResponse _weatherData;

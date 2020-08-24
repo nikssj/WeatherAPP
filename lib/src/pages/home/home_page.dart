@@ -1,14 +1,15 @@
-import 'package:animate_do/animate_do.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:getwidget/components/appbar/gf_appbar.dart';
-import 'package:getwidget/components/button/gf_icon_button.dart';
-import 'package:getwidget/types/gf_button_type.dart';
+
+// Package imports:
+import 'package:animate_do/animate_do.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:weather_app/src/pages/home/home_viewmodel.dart';
-import 'package:weather_app/src/pages/home/widgets/WeatherImage.dart';
 import 'package:weather_app/src/pages/home/widgets/WeatherBottomInfo.dart';
+import 'package:weather_app/src/pages/home/widgets/WeatherImage.dart';
 import 'package:weather_app/src/pages/home/widgets/WeatherMainInfo.dart';
-import 'package:weather_app/src/widgets/CustomWidgets/Custom_AppBar.dart';
 import 'package:weather_app/src/widgets/CustomWidgets/Custom_SearchBar.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,12 +32,9 @@ class _HomePageState extends State<HomePage> {
 
     final _homeVm = Provider.of<HomeViewModel>(context, listen: true);
 
-    final _bottom = MediaQuery.of(context).viewInsets.bottom;
-
     return WeatherImage(
       child: SafeArea(
         child: Scaffold(
-            // appBar: _buildAppBar(),
             backgroundColor: Colors.transparent,
             resizeToAvoidBottomInset: false,
             resizeToAvoidBottomPadding: false,

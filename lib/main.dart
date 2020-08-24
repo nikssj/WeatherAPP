@@ -1,8 +1,13 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
-import 'package:intl/date_symbol_data_local.dart';
+
+// Project imports:
 import 'package:weather_app/src/pages/home/home_page.dart';
 import 'src/pages/home/home_viewmodel.dart';
 

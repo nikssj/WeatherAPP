@@ -1,11 +1,15 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:weather_app/src/pages/home/services/WeatherStats_service.dart';
 import 'package:weather_app/src/widgets/SizedText.dart';
-
 import '../../home_viewmodel.dart';
+import 'Css/StatsCss.dart';
 
 class SunsetStats extends StatelessWidget {
   @override
@@ -37,7 +41,7 @@ class SunsetStats extends StatelessWidget {
                   (weatherStatsService.getFinalDateTime(
                       _homeVm.weatherData.sys.sunrise,
                       _homeVm.weatherData.timezone)),
-              style: GoogleFonts.montserrat(color: Colors.white),
+              style: StatsCss(color: Colors.white).textProperties,
               textAlign: TextAlign.center,
             ),
           ),
@@ -60,7 +64,7 @@ class SunsetStats extends StatelessWidget {
                     (weatherStatsService.getFinalDateTime(
                         _homeVm.weatherData.sys.sunset,
                         _homeVm.weatherData.timezone)),
-                style: GoogleFonts.montserrat(color: Colors.white),
+                style: StatsCss(color: Colors.white).textProperties,
                 textAlign: TextAlign.center,
               ),
             ),

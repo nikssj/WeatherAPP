@@ -1,3 +1,4 @@
+// Project imports:
 import 'package:weather_app/src/utils/datetime_provider.dart';
 
 final weatherStatsService = new WeatherStatsService();
@@ -16,8 +17,6 @@ class WeatherStatsService {
   }
 
   getFinalDateTime(timeStamp, timeZoneSeconds) {
-    var timestamptWithGMT = timeStamp + timeZoneSeconds;
-
     var finalDate = convertTimestampToDate(timeStamp);
 
     var formattedDate = dateTimeProvider.formatearDateTime(

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:overlay_support/overlay_support.dart';
-import 'package:weather_app/helpers/GlobalKey.dart';
 
 // Project imports:
+import 'package:weather_app/helpers/GlobalKey.dart';
 import 'Snackbars_widgets.dart';
 
 // Project imports:

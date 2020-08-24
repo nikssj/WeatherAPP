@@ -1,6 +1,7 @@
 // import 'package:andersgym/helpers/GlobalCss.dart';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final String titulo;

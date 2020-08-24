@@ -1,10 +1,15 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:weather_app/src/pages/home/home_viewmodel.dart';
 import 'package:weather_app/src/pages/home/services/WeatherStats_service.dart';
 import 'package:weather_app/src/widgets/SizedText.dart';
+import 'Css/StatsCss.dart';
 
 class ExtraStats extends StatelessWidget {
   @override
@@ -41,7 +46,7 @@ class ExtraStats extends StatelessWidget {
                               _homeVm.weatherData.visibility.toDouble())
                           .toString() +
                       ' k/m',
-                  style: GoogleFonts.montserrat(color: Colors.white),
+                  style: StatsCss(color: Colors.white).textProperties,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -63,7 +68,7 @@ class ExtraStats extends StatelessWidget {
                     'Clouds: ' +
                         _homeVm.weatherData.clouds.all.toString() +
                         '%',
-                    style: GoogleFonts.montserrat(color: Colors.white),
+                    style: StatsCss(color: Colors.white).textProperties,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -87,7 +92,7 @@ class ExtraStats extends StatelessWidget {
                 height: _tamanoTexto,
                 child: Text(
                   'Wind: ' + _homeVm.weatherData.wind.speed.toString() + ' k/m',
-                  style: GoogleFonts.montserrat(color: Colors.white),
+                  style: StatsCss(color: Colors.white).textProperties,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -106,7 +111,7 @@ class ExtraStats extends StatelessWidget {
                 height: _tamanoTexto,
                 child: Text(
                   'Pressure: ' + _homeVm.weatherData.main.pressure.toString(),
-                  style: GoogleFonts.montserrat(color: Colors.white),
+                  style: StatsCss(color: Colors.white).textProperties,
                   textAlign: TextAlign.center,
                 ),
               )

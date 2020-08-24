@@ -1,7 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:weather_app/src/pages/home/home_viewmodel.dart';
 
 class CustomSearchBar extends StatelessWidget {

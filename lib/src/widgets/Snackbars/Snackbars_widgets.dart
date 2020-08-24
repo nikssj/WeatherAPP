@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:google_fonts/google_fonts.dart';
 import 'package:overlay_support/overlay_support.dart';
-import 'package:weather_app/helpers/Constants.dart';
-import 'package:weather_app/helpers/GlobalKey.dart';
 
 // Project imports:
-
-import '../SizedText.dart';
+import 'package:weather_app/helpers/Constants.dart';
+import 'package:weather_app/helpers/GlobalKey.dart';
 import 'Snackbars_config.dart';
+
+// Project imports:
 
 final snackBars = new Snackbars();
 

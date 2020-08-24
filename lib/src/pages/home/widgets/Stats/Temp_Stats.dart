@@ -1,9 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:weather_app/src/pages/home/home_viewmodel.dart';
 import 'package:weather_app/src/widgets/SizedText.dart';
+import 'Css/StatsCss.dart';
 
 class TemperatureStats extends StatelessWidget {
   @override
@@ -35,7 +40,7 @@ class TemperatureStats extends StatelessWidget {
                 height: _tamanoTexto,
                 child: Text(
                   'Min: ' + _homeVm.weatherData.main.tempMin.toString() + '°',
-                  style: GoogleFonts.montserrat(color: Colors.white),
+                  style: StatsCss(color: Colors.white).textProperties,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -54,7 +59,7 @@ class TemperatureStats extends StatelessWidget {
                 height: _tamanoTexto,
                 child: Text(
                   'Max: ' + _homeVm.weatherData.main.tempMax.toString() + '°',
-                  style: GoogleFonts.montserrat(color: Colors.white),
+                  style: StatsCss(color: Colors.white).textProperties,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -77,7 +82,7 @@ class TemperatureStats extends StatelessWidget {
                 height: _tamanoTexto,
                 child: Text(
                   'Humidity: ' + _homeVm.weatherData.main.temp.toString() + '%',
-                  style: GoogleFonts.montserrat(color: Colors.white),
+                  style: StatsCss(color: Colors.white).textProperties,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -99,7 +104,7 @@ class TemperatureStats extends StatelessWidget {
                     'Feels like: ' +
                         _homeVm.weatherData.main.feelsLike.toString() +
                         '°',
-                    style: GoogleFonts.montserrat(color: Colors.white),
+                    style: StatsCss(color: Colors.white).textProperties,
                     textAlign: TextAlign.center,
                   ),
                 ),

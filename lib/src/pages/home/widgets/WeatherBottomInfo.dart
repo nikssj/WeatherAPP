@@ -1,8 +1,13 @@
-import 'package:animate_do/animate_do.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:weather_app/src/pages/home/home_viewmodel.dart';
 import 'package:weather_app/src/pages/home/widgets/Stats/Extra_stats.dart';
 import 'package:weather_app/src/pages/home/widgets/Stats/Sunset_Stats.dart';
@@ -62,8 +67,6 @@ class WeatherInfo extends StatelessWidget {
     final _selectedColor = Colors.white70;
 
     final _notSelectedColor = Colors.grey[700];
-
-    // _homeVm.setSelectedStat = 'TempStat';
 
     return Row(
       children: [

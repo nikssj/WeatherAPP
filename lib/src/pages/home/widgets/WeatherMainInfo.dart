@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+
+// Project imports:
 import 'package:weather_app/src/pages/home/home_viewmodel.dart';
 import 'package:weather_app/src/widgets/SizedText.dart';
 
@@ -13,11 +18,14 @@ class WeatherMainInfo extends StatelessWidget {
 
     return Column(
       children: [
+        //Location Name
         Text(
           _homeVm.weatherData.name + ', ' + _homeVm.weatherData.sys.country,
           style: GoogleFonts.montserrat(color: Colors.white, fontSize: 30),
           textAlign: TextAlign.center,
         ),
+
+        //Location Temp
         Padding(
           padding: EdgeInsets.only(left: _size.width * 0.05),
           child: SizedText(
@@ -29,10 +37,15 @@ class WeatherMainInfo extends StatelessWidget {
             ),
           ),
         ),
-        Text(
-          '~ ' + _homeVm.weatherData.weather[0].description + ' ~',
-          style: GoogleFonts.montserrat(color: Colors.white, fontSize: 24),
-          textAlign: TextAlign.center,
+
+        //Location Weather
+        SizedText(
+          height: _size.height * 0.045,
+          child: Text(
+            '~ ' + _homeVm.weatherData.weather[0].description + ' ~',
+            style: GoogleFonts.montserrat(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );
